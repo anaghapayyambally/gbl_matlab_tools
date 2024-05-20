@@ -13,14 +13,18 @@ end
 %%
 % calculate potential temperature, which will be used to calculate
 % solubility later
-IEP_btl.PotentialT = sw_ptmp(IEP_btl.SalinityPSU,IEP_btl.TemperatureITS90DegC,IEP_btl.Pressuredb,0);
+%IEP_btl.PotentialT = sw_ptmp(IEP_btl.SalinityPSU,IEP_btl.TemperatureITS90DegC,IEP_btl.Pressuredb,0);
 
-% add pressure, depth, T, S, density variables to IEP_SID
+% add pressure, depth, T, S, density,oxygen variables to IEP_SID
 IEP_SID.P = IEP_btl.Pressuredb(match_sb);
 IEP_SID.depth = IEP_btl.Depthm(match_sb);
 IEP_SID.T = IEP_btl.TemperatureITS90DegC(match_sb);
 IEP_SID.S = IEP_btl.SalinityPSU(match_sb);
+IEP_SID.O = IEP_btl.Oxygenmll(match_sb);
+IEP_SID.D = IEP_btl.Depthm(match_sb);
 IEP_SID.dens = sw_dens(IEP_SID.S,IEP_SID.T,IEP_SID.P);
+IEP_SID.lat = IEP_btl.LatS(match_sb);
+IEP_SID.lon = IEP_btl.LonE(match_sb);
 
 IEP_SID_TS = IEP_SID;
 

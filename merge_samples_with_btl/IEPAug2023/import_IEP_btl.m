@@ -21,7 +21,7 @@ opts.VariableTypes = ["categorical", "categorical", "categorical", "categorical"
 opts = setvaropts(opts, ["Filename", "Cruise", "Station", "Grid", "Type", "mmddyyyyy", "hhmm"], "EmptyFieldRule", "auto");
 
 % Import the data
-IEP_btl = readtable("C:\Users\ccm21008\Documents\GitHub\gbl_matlab_tools\merge_samples_with_btl\IEPAug2023\Alg293_August 2023 IEP Bottle data Mo.xlsx", opts, "UseExcel", false);
+IEP_btl = readtable("C:\Users\User\Documents\GitHub\gbl_matlab_tools\merge_samples_with_btl\IEPAug2023\Alg293_August 2023 IEP Bottle data Mo.xlsx", opts, "UseExcel", false);
 
 
 %% Clear temporary variables
